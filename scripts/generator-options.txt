@@ -1,0 +1,6 @@
+savilerowOptions: -timelimit 300000
+solverFlags: -varorder domoverwdeg -valorder random -randomiseorder -timelimit 300
+solverRandomSeedArg: -randomseed 
+solver: minion
+essenceModel: ./generator.essence
+eprimeModel: ./generator-models/model.eprime

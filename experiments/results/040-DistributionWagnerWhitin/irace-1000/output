@@ -1,0 +1,368 @@
+#------------------------------------------------------------------------------
+# irace: An implementation in R of (Elitist) Iterated Racing
+# Version: 3.3.2238:2239
+# Copyright (C) 2010-2019
+# Manuel Lopez-Ibanez     <manuel.lopez-ibanez@manchester.ac.uk>
+# Jeremie Dubois-Lacoste  
+# Leslie Perez Caceres    <leslie.perez.caceres@ulb.ac.be>
+#
+# This is free software, and you are welcome to redistribute it under certain
+# conditions.  See the GNU General Public License for details. There is NO
+# WARRANTY; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# irace builds upon previous code from the race package:
+#     race: Racing methods for the selection of the best
+#     Copyright (C) 2003 Mauro Birattari
+#------------------------------------------------------------------------------
+# installed at: /circa/home/nttd/instance-generation-conjure/instance-generation/tools/irace
+# called with: --seed 0 --scenario scenario.txt --parameter-file params.irace --train-instances-file instances --exec-dir irace-1000 --max-experiments 1000 --parallel 55 --mpi 0 --deterministic 0 --debug-level 0
+# 2019-05-11 18:02:05 BST: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 6
+# minNbSurvival: 6
+# nbParameters: 18
+# seed: 0
+# confidence level: 0.95
+# budget: 1000
+# mu: 5
+# deterministic: FALSE
+
+# 2019-05-11 18:02:05 BST: Iteration 1 of 6
+# experimentsUsedSoFar: 0
+# remainingBudget: 1000
+# currentBudget: 166
+# nbConfigurations: 27
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          1|         27|          1|   -10.00000000|         27|00:00:00|   NA|  NA|    NA|
+|x|          2|         27|          1|   -5.000000000|         54|00:00:00|+0.00|0.50|0.4815|
+|x|          3|         27|          1|   -3.362610333|         81|00:00:00|+0.50|0.67|0.3210|
+|x|          4|         27|          1|   -2.521957750|        108|00:00:00|+0.33|0.50|0.3210|
+|-|          5|          1|          1|   -2.017566200|        135|00:00:00|   NA|  NA|    NA|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:           1    mean value:    -2.017566200
+Description of the best-so-far configuration:
+  .ID. numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta .PARENT.
+1    1              41              1               19              11                 8               14              49             24                        8                      14                    19                   17                  13                 12                         8                        1                          37                         12       NA
+
+# 2019-05-11 18:02:07 BST: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+  numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta
+1              41              1               19              11                 8               14              49             24                        8                      14                    19                   17                  13                 12                         8                        1                          37                         12
+# 2019-05-11 18:02:07 BST: Iteration 2 of 6
+# experimentsUsedSoFar: 135
+# remainingBudget: 865
+# currentBudget: 173
+# nbConfigurations: 25
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          6|         25|         28|   -5.194630000|         25|00:00:00|   NA|  NA|    NA|
+|x|          3|         25|         28|   -3.020542500|         49|00:00:00|+0.53|0.77|0.0182|
+|x|          2|         25|         28|   -2.069164000|         73|00:00:00|+0.63|0.75|0.0121|
+|x|          4|         25|         28|   -1.551873000|         97|00:00:00|+0.42|0.56|0.2461|
+|-|          5|          2|         28|   -1.241498400|        121|00:00:00|+0.50|0.60|0.1500|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:           1    mean value:    -1.681305167
+Description of the best-so-far configuration:
+  .ID. numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta .PARENT.
+1    1              41              1               19              11                 8               14              49             24                        8                      14                    19                   17                  13                 12                         8                        1                          37                         12       NA
+
+# 2019-05-11 18:02:08 BST: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta
+1               41              1               19              11                 8               14              49             24                        8                      14                    19                   17                  13                 12                         8                        1                          37                         12
+28              38             21               12               7                21               23              47             11                        2                      18                    11                    6                   1                 17                         3                        1                          37                         10
+# 2019-05-11 18:02:08 BST: Iteration 3 of 6
+# experimentsUsedSoFar: 256
+# remainingBudget: 744
+# currentBudget: 186
+# nbConfigurations: 24
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          7|         24|         67|   -10.00000000|         24|00:00:00|   NA|  NA|    NA|
+|x|          5|         24|         55|  -0.3215175000|         46|00:00:00|+0.44|0.72|1.0020|
+|x|          2|         24|         55|  -0.4107046667|         68|00:00:00|+0.45|0.63|0.6855|
+|x|          3|         24|         55|  -0.4230830000|         90|00:00:00|+0.42|0.56|0.7153|
+|-|          6|          4|         55|  -0.4646642000|        112|00:00:00|+0.27|0.41|0.6537|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:           1    mean value:    -1.441118714
+Description of the best-so-far configuration:
+  .ID. numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta .PARENT.
+1    1              41              1               19              11                 8               14              49             24                        8                      14                    19                   17                  13                 12                         8                        1                          37                         12       NA
+
+# 2019-05-11 18:02:09 BST: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta
+1               41              1               19              11                 8               14              49             24                        8                      14                    19                   17                  13                 12                         8                        1                          37                         12
+28              38             21               12               7                21               23              47             11                        2                      18                    11                    6                   1                 17                         3                        1                          37                         10
+71              33             15               20              20                18               13              44             12                        8                      16                    10                   23                  21                  9                         9                        2                          42                         19
+55              17              7                5               7                 6                0              47             20                       30                       3                    15                   11                   4                  4                        11                        2                          16                          8
+# 2019-05-11 18:02:09 BST: Iteration 4 of 6
+# experimentsUsedSoFar: 368
+# remainingBudget: 632
+# currentBudget: 210
+# nbConfigurations: 26
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          8|         26|         90|   -10.00000000|         26|00:00:00|   NA|  NA|    NA|
+|x|          3|         26|         55|   -1.147349000|         48|00:00:00|+0.28|0.64|1.0390|
+|x|          6|         26|         90|   -4.099633667|         70|00:00:00|+0.50|0.67|0.7517|
+|x|          5|         26|         90|   -5.574725250|         92|00:00:00|+0.44|0.58|0.7046|
+|-|          7|          5|         55|  -0.7137444000|        114|00:00:00|+0.17|0.34|0.6363|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:           1    mean value:    -1.260978875
+Description of the best-so-far configuration:
+  .ID. numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta .PARENT.
+1    1              41              1               19              11                 8               14              49             24                        8                      14                    19                   17                  13                 12                         8                        1                          37                         12       NA
+
+# 2019-05-11 18:02:10 BST: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta
+1               41              1               19              11                 8               14              49             24                        8                      14                    19                   17                  13                 12                         8                        1                          37                         12
+28              38             21               12               7                21               23              47             11                        2                      18                    11                    6                   1                 17                         3                        1                          37                         10
+71              33             15               20              20                18               13              44             12                        8                      16                    10                   23                  21                  9                         9                        2                          42                         19
+55              17              7                5               7                 6                0              47             20                       30                       3                    15                   11                   4                  4                        11                        2                          16                          8
+90              35             17               12               5                14               15              47             11                        9                      14                     1                    8                   3                 11                         5                        2                          50                         16
+# 2019-05-11 18:02:10 BST: Iteration 5 of 6
+# experimentsUsedSoFar: 482
+# remainingBudget: 518
+# currentBudget: 259
+# nbConfigurations: 29
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          9|         29|          1|   -10.00000000|         29|00:00:00|   NA|  NA|    NA|
+|x|          3|         29|         28|   -5.423227500|         53|00:00:00|+0.53|0.76|1.0199|
+|x|          7|         29|         55|  -0.6054153333|         77|00:00:00|+0.51|0.67|0.7429|
+|x|          2|         29|         55|  -0.6013312500|        102|00:00:00|+0.49|0.62|0.8768|
+|-|          4|          6|         55|  -0.7135210000|        129|00:00:00|+0.03|0.22|0.9226|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:           1    mean value:    -2.231981222
+Description of the best-so-far configuration:
+  .ID. numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta .PARENT.
+1    1              41              1               19              11                 8               14              49             24                        8                      14                    19                   17                  13                 12                         8                        1                          37                         12       NA
+
+# 2019-05-11 18:02:12 BST: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta
+1                41              1               19              11                 8               14              49             24                        8                      14                    19                   17                  13                 12                         8                        1                          37                         12
+55               17              7                5               7                 6                0              47             20                       30                       3                    15                   11                   4                  4                        11                        2                          16                          8
+71               33             15               20              20                18               13              44             12                        8                      16                    10                   23                  21                  9                         9                        2                          42                         19
+90               35             17               12               5                14               15              47             11                        9                      14                     1                    8                   3                 11                         5                        2                          50                         16
+28               38             21               12               7                21               23              47             11                        2                      18                    11                    6                   1                 17                         3                        1                          37                         10
+103              31              2                1               8                 3                1              36             20                       23                       4                    13                   16                   6                  7                        16                        1                          23                          9
+# 2019-05-11 18:02:12 BST: Iteration 6 of 6
+# experimentsUsedSoFar: 611
+# remainingBudget: 389
+# currentBudget: 389
+# nbConfigurations: 44
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         10|         44|         90|   -10.00000000|         44|00:00:00|   NA|  NA|    NA|
+|x|          2|         44|         90|   -5.088746000|         82|00:00:00|+0.45|0.73|1.0103|
+|x|          5|         44|         90|   -6.725830667|        121|00:00:00|+0.51|0.67|0.5716|
+|x|          1|         44|         90|   -5.612730500|        164|00:00:00|+0.49|0.62|0.7462|
+|-|          9|          8|         55|  -0.5844490000|        202|00:00:00|-0.10|0.12|0.9290|
+|=|          8|          8|         90|   -5.408487000|        205|00:00:00|-0.00|0.16|0.8485|
+|=|          4|          8|         55|  -0.8455721429|        207|00:00:00|+0.04|0.17|0.9006|
+|=|          7|          8|         55|  -0.7678941250|        209|00:00:00|+0.00|0.13|0.9455|
+|=|          6|          8|         55|  -0.7526824444|        212|00:00:00|-0.03|0.08|0.9354|
+|=|          3|          8|        154|  -0.8517047000|        214|00:00:00|-0.03|0.07|0.9153|
+|=|         11|          8|        154|  -0.9905551818|        222|00:00:00|+0.01|0.10|0.8928|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         154    mean value:   -0.9905551818
+Description of the best-so-far configuration:
+    .ID. numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta .PARENT.
+154  154              32              4               10              10                 5                0              47             23                       20                       6                     5                   14                  11                 18                        18                        1                          21                         11      103
+
+# 2019-05-11 18:02:14 BST: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta
+154              32              4               10              10                 5                0              47             23                       20                       6                     5                   14                  11                 18                        18                        1                          21                         11
+90               35             17               12               5                14               15              47             11                        9                      14                     1                    8                   3                 11                         5                        2                          50                         16
+55               17              7                5               7                 6                0              47             20                       30                       3                    15                   11                   4                  4                        11                        2                          16                          8
+103              31              2                1               8                 3                1              36             20                       23                       4                    13                   16                   6                  7                        16                        1                          23                          9
+28               38             21               12               7                21               23              47             11                        2                      18                    11                    6                   1                 17                         3                        1                          37                         10
+152              13             12                7              15                14               12              49             12                        1                      19                     9                   10                  31                 11                         4                        2                          35                         20
+# 2019-05-11 18:02:14 BST: Iteration 7 of 7
+# experimentsUsedSoFar: 833
+# remainingBudget: 167
+# currentBudget: 167
+# nbConfigurations: 19
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         12|         19|         28|   -10.00000000|         19|00:00:00|   NA|  NA|    NA|
+|x|          2|         19|         90|   -4.671481000|         32|00:00:00|+0.58|0.79|0.9924|
+|x|          6|         19|         28|   -5.120345667|         45|00:00:00|+0.72|0.81|0.8298|
+|x|         10|         19|         90|   -5.349380500|         58|00:00:00|+0.64|0.73|0.7283|
+|-|          1|          7|         90|   -4.734190400|         71|00:00:00|-0.02|0.19|0.8765|
+|=|          3|          7|         28|   -4.253628667|         72|00:00:00|+0.05|0.20|0.8208|
+|=|          9|          7|         28|   -5.074538857|         73|00:00:00|+0.10|0.22|0.7547|
+|=|         11|          7|        170|   -3.742758375|         74|00:00:00|+0.11|0.22|0.7695|
+|=|          8|          7|        170|   -4.221393000|         75|00:00:00|+0.09|0.19|0.7618|
+|=|          7|          7|        170|   -4.652513700|         76|00:00:00|+0.06|0.15|0.7566|
+|=|          5|          7|        170|   -4.572533364|         77|00:00:00|+0.07|0.15|0.7425|
+|=|          4|          7|        170|   -4.433058083|         78|00:00:00|+0.08|0.15|0.7396|
+|-|         13|          3|        170|   -4.828102846|         85|00:00:00|+0.08|0.15|0.5634|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         170    mean value:    -4.828102846
+Description of the best-so-far configuration:
+    .ID. numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta .PARENT.
+170  170              31              5               11               8                 5                4              46             23                       23                      12                     4                   18                   5                 24                        11                        1                          36                         16      154
+
+# 2019-05-11 18:02:16 BST: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta
+170              31              5               11               8                 5                4              46             23                       23                      12                     4                   18                   5                 24                        11                        1                          36                         16
+90               35             17               12               5                14               15              47             11                        9                      14                     1                    8                   3                 11                         5                        2                          50                         16
+154              32              4               10              10                 5                0              47             23                       20                       6                     5                   14                  11                 18                        18                        1                          21                         11
+# 2019-05-11 18:02:16 BST: Iteration 8 of 8
+# experimentsUsedSoFar: 918
+# remainingBudget: 82
+# currentBudget: 82
+# nbConfigurations: 8
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         14|          8|        172|   -10.00000000|          8|00:00:00|   NA|  NA|    NA|
+|x|          6|          8|        172|   -10.00000000|         13|00:00:00|+0.98|0.99|0.0020|
+|x|          3|          8|        172|   -8.523513333|         18|00:00:00|+0.74|0.83|0.4429|
+|x|          2|          8|        172|   -7.446257500|         23|00:00:00|+0.60|0.70|0.5602|
+|-|          5|          6|        172|   -5.957006000|         28|00:00:00|-0.03|0.18|0.8326|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         170    mean value:    -5.115772643
+Description of the best-so-far configuration:
+    .ID. numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta .PARENT.
+170  170              31              5               11               8                 5                4              46             23                       23                      12                     4                   18                   5                 24                        11                        1                          36                         16      154
+
+# 2019-05-11 18:02:16 BST: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta
+170              31              5               11               8                 5                4              46             23                       23                      12                     4                   18                   5                 24                        11                        1                          36                         16
+90               35             17               12               5                14               15              47             11                        9                      14                     1                    8                   3                 11                         5                        2                          50                         16
+154              32              4               10              10                 5                0              47             23                       20                       6                     5                   14                  11                 18                        18                        1                          21                         11
+172              27             21               10               9                18               16              44             18                        3                      20                     6                   14                   0                 11                        13                        2                          45                         17
+175              39             14                6               7                 2               22              49             12                        7                      24                     4                    9                   4                  7                         8                        2                          39                         14
+174              21             11                8               9                 3                8              48             23                       30                      15                     7                   22                  10                 22                        18                        1                          29                         16
+# 2019-05-11 18:02:16 BST: Iteration 9 of 9
+# experimentsUsedSoFar: 946
+# remainingBudget: 54
+# currentBudget: 54
+# nbConfigurations: 9
+  Markers:
+     x No test is performed.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         15|          9|        177|   -9.514970000|          9|00:00:00|   NA|  NA|    NA|
+|x|          2|          9|        175|   -5.098336500|         12|00:00:00|+0.09|0.55|1.1435|
+|x|         14|          9|        172|   -4.738163333|         15|00:00:00|+0.15|0.43|0.9232|
+|x|          6|          9|        172|   -6.053622500|         18|00:00:00|+0.09|0.32|0.8264|
+|=|         12|          9|        170|   -5.985852000|         24|00:00:00|+0.11|0.28|0.8819|
+|=|         11|          9|        170|   -5.881913333|         30|00:00:00|+0.11|0.25|0.8557|
+|-|         10|          7|        170|   -6.064570000|         36|00:00:00|-0.02|0.13|0.8364|
+|=|          9|          7|        170|   -5.530648750|         40|00:05:47|-0.05|0.09|0.8451|
+|=|          4|          7|        170|   -5.238224444|         44|00:03:22|-0.03|0.08|0.8337|
+|=|          8|          7|        170|   -5.519449000|         48|00:05:58|-0.03|0.07|0.8228|
+|=|          3|          7|        170|   -5.042976091|         49|00:05:48|-0.01|0.09|0.8088|
+|=|          1|          7|        170|   -4.898167250|         53|00:03:11|+0.03|0.11|0.7922|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         170    mean value:    -5.376798467
+Description of the best-so-far configuration:
+    .ID. numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta .PARENT.
+170  170              31              5               11               8                 5                4              46             23                       23                      12                     4                   18                   5                 24                        11                        1                          36                         16      154
+
+# 2019-05-11 18:26:27 BST: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta
+170              31              5               11               8                 5                4              46             23                       23                      12                     4                   18                   5                 24                        11                        1                          36                         16
+90               35             17               12               5                14               15              47             11                        9                      14                     1                    8                   3                 11                         5                        2                          50                         16
+154              32              4               10              10                 5                0              47             23                       20                       6                     5                   14                  11                 18                        18                        1                          21                         11
+175              39             14                6               7                 2               22              49             12                        7                      24                     4                    9                   4                  7                         8                        2                          39                         14
+172              27             21               10               9                18               16              44             18                        3                      20                     6                   14                   0                 11                        13                        2                          45                         17
+174              21             11                8               9                 3                8              48             23                       30                      15                     7                   22                  10                 22                        18                        1                          29                         16
+# 2019-05-11 18:26:27 BST: Stopped because there is not enough budget left to race more than the minimum (6)
+# You may either increase the budget or set 'minNbSurvival' to a lower value
+# Iteration: 10
+# nbIterations: 10
+# experimentsUsedSoFar: 999
+# timeUsed: 0
+# remainingBudget: 1
+# currentBudget: 1
+# number of elites: 6
+# nbConfigurations: 5
+# Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    numNodes_middle numNodes_delta numLeaves_middle numLeaves_delta numPeriods_middle numPeriods_delta maxStock_middle maxStock_delta holdingCost_range_middle holdingCost_range_delta procCost_range_middle procCost_range_delta demand_range_middle demand_range_delta children_range_cardMiddle children_range_cardDelta children_range_inner_middle children_range_inner_delta
+170              31              5               11               8                 5                4              46             23                       23                      12                     4                   18                   5                 24                        11                        1                          36                         16
+90               35             17               12               5                14               15              47             11                        9                      14                     1                    8                   3                 11                         5                        2                          50                         16
+154              32              4               10              10                 5                0              47             23                       20                       6                     5                   14                  11                 18                        18                        1                          21                         11
+175              39             14                6               7                 2               22              49             12                        7                      24                     4                    9                   4                  7                         8                        2                          39                         14
+172              27             21               10               9                18               16              44             18                        3                      20                     6                   14                   0                 11                        13                        2                          45                         17
+174              21             11                8               9                 3                8              48             23                       30                      15                     7                   22                  10                 22                        18                        1                          29                         16
+# Best configurations as commandlines (first number is the configuration ID; same order as above):
+170  -numNodes_middle 31 -numNodes_delta 5 -numLeaves_middle 11 -numLeaves_delta 8 -numPeriods_middle 5 -numPeriods_delta 4 -maxStock_middle 46 -maxStock_delta 23 -holdingCost_range_middle 23 -holdingCost_range_delta 12 -procCost_range_middle 4 -procCost_range_delta 18 -demand_range_middle 5 -demand_range_delta 24 -children_range_cardMiddle 11 -children_range_cardDelta 1 -children_range_inner_middle 36 -children_range_inner_delta 16
+90   -numNodes_middle 35 -numNodes_delta 17 -numLeaves_middle 12 -numLeaves_delta 5 -numPeriods_middle 14 -numPeriods_delta 15 -maxStock_middle 47 -maxStock_delta 11 -holdingCost_range_middle 9 -holdingCost_range_delta 14 -procCost_range_middle 1 -procCost_range_delta 8 -demand_range_middle 3 -demand_range_delta 11 -children_range_cardMiddle 5 -children_range_cardDelta 2 -children_range_inner_middle 50 -children_range_inner_delta 16
+154  -numNodes_middle 32 -numNodes_delta 4 -numLeaves_middle 10 -numLeaves_delta 10 -numPeriods_middle 5 -numPeriods_delta 0 -maxStock_middle 47 -maxStock_delta 23 -holdingCost_range_middle 20 -holdingCost_range_delta 6 -procCost_range_middle 5 -procCost_range_delta 14 -demand_range_middle 11 -demand_range_delta 18 -children_range_cardMiddle 18 -children_range_cardDelta 1 -children_range_inner_middle 21 -children_range_inner_delta 11
+175  -numNodes_middle 39 -numNodes_delta 14 -numLeaves_middle 6 -numLeaves_delta 7 -numPeriods_middle 2 -numPeriods_delta 22 -maxStock_middle 49 -maxStock_delta 12 -holdingCost_range_middle 7 -holdingCost_range_delta 24 -procCost_range_middle 4 -procCost_range_delta 9 -demand_range_middle 4 -demand_range_delta 7 -children_range_cardMiddle 8 -children_range_cardDelta 2 -children_range_inner_middle 39 -children_range_inner_delta 14
+172  -numNodes_middle 27 -numNodes_delta 21 -numLeaves_middle 10 -numLeaves_delta 9 -numPeriods_middle 18 -numPeriods_delta 16 -maxStock_middle 44 -maxStock_delta 18 -holdingCost_range_middle 3 -holdingCost_range_delta 20 -procCost_range_middle 6 -procCost_range_delta 14 -demand_range_middle 0 -demand_range_delta 11 -children_range_cardMiddle 13 -children_range_cardDelta 2 -children_range_inner_middle 45 -children_range_inner_delta 17
+174  -numNodes_middle 21 -numNodes_delta 11 -numLeaves_middle 8 -numLeaves_delta 9 -numPeriods_middle 3 -numPeriods_delta 8 -maxStock_middle 48 -maxStock_delta 23 -holdingCost_range_middle 30 -holdingCost_range_delta 15 -procCost_range_middle 7 -procCost_range_delta 22 -demand_range_middle 10 -demand_range_delta 22 -children_range_cardMiddle 18 -children_range_cardDelta 1 -children_range_inner_middle 29 -children_range_inner_delta 16

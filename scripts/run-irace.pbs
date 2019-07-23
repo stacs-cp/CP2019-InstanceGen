@@ -1,0 +1,53 @@
+#!/bin/bash --login
+
+# run a tuning experiment using irace, either on the cluster, or locally (after everything has been setup properly using the run-experiment.sh script)
+# this script is also used for resuming an early-terminated tuning
+# syntax: ./run-irace.pbs
+
+
+#PBS -A dc014
+#PBS -l select=1:ncpus=36
+#PBS -l walltime=10:00:00
+#PBS -l place=scatter:excl
+
+runEnv="<runEnv>"
+baseDir="<baseDir>"
+workingDir="<workingDir>"
+
+cd $workingDir
+
+export PATH=$baseDir/tools/irace/bin/:$PATH # irace
+export R_LIBS=$baseDir/tools/:$R_LIBS # irace
+export PATH=~/minion-private/bin:$PATH # use minion private repository (master branch)
+export PATH=~/.local/bin/conjure-streamlining/:$PATH # use conjure master branch
+export PATH=~/.local/bin/conjure-streamlining/savilerow/:$PATH # use savilerow in conjure master branch
+
+# run on cluster
+if [[ $runEnv =~ "cluster" ]]; then
+	# Load any required modules
+	module load gcc
+	module load R
+fi
+
+runDir="<runDir>"
+
+# irace options
+seed=<seed>
+parallel=<parallel>
+maxExperiments=<budget>
+mpi=0
+iterations=3
+firstTest=5
+mu=2
+deterministic=0
+elitist=1
+outFn=${runDir}/output
+debugLevel=0
+minSurvival=50
+
+# run irace with modified params: not used at the moment
+#irace --seed ${seed} --scenario scenario.txt --parameter-file params --train-instances-file instances --exec-dir ${runDir} --max-experiments ${maxExperiments} --parallel ${parallel} --mpi ${mpi} --iterations ${iterations} --first-test ${firstTest} --mu ${mu} --deterministic ${deterministic} --elitist ${elitist} --debug-level ${debugLevel} --min-survival ${minSurvival} --forbidden-file forbiddens >${outFn} 2>&1 
+
+
+# run basic irace
+irace --seed ${seed} --scenario scenario.txt --parameter-file params.irace --train-instances-file instances --exec-dir ${runDir} --max-experiments ${maxExperiments} --parallel ${parallel} --mpi ${mpi} --deterministic ${deterministic} --debug-level ${debugLevel} >${outFn} 2>&1

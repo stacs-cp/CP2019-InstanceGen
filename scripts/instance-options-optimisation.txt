@@ -1,0 +1,13 @@
+savilerowOptions: -preprocess None -timelimit 300000
+solverTimeLimit: 300
+solverNodeLimit: 0
+solverMinTime: 10
+solverMinNode: 0
+solverTimeLimitPrefix: -cpulimit 
+solverNodeLimitPrefix: 
+solverRandomSeedArg: -randomseed 
+solverFlags: -varorder domoverwdeg -valorder random
+solver: minion
+nEvaluations: 5
+essenceModel: ./model.essence
+eprimeModel: ./models/model.eprime 

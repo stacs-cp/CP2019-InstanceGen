@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# a bash script that will be called by irace every time a configuration is evaluated
+# this script will save output of a run in a text file called out-<configuration_id>-<random_seed>, so if irace is terminated early and is resumed, this csript will look for that output file first. If the file exists and result is valid, it won't re-run the evaluation and just simply returns the current output.
+
+candId=$1
+instId=$2
+seed=$3
+problem=$4
+
+# options
+reRunExistingButFailedOutput='1'
+
+outfn="out-${candId}-${seed}"
+
+re='^-?[0-9]+([.][0-9]+)?e?[+-]?([0-9]+)?$'
+
+reRun='0'
+if [ -f $outfn ]; then
+    # extract output
+    rs="$(tail -n 1 ${outfn})"
+    if ! [[ ${rs} =~ $re ]] ; then
+        if [ "${reRunExistingButFailedOutput=}" = "1" ] ; then
+            reRun='1'
+        fi
+    fi
+fi
+
+# run command
+if [ ! -f $outfn ] || [ "${reRun}" = "1" ] ; then
+    #/lustre/home/dc014/nttd/softwares/runsolver -M 20000 -C 3600 -o ${outfn} -w watch-${outfn} python3 ../run-decision-domoverwdeg.py $@ >/dev/null 2>&1
+    python3 ../wrapper.py $@ >${outfn} 2>&1
+fi
+
+# extract output
+rs="$(tail -n 1 ${outfn})"
+
+# if output is not a number, print "Error"
+if ! [[ ${rs} =~ $re ]] ; then
+   #echo "Inf"
+   echo "Error! ${rs}"
+else
+   echo "$rs"
+fi

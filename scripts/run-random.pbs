@@ -1,0 +1,41 @@
+#!/bin/bash --login
+
+# run a random-search experiment, either on the cluster, or locally (after everything has been setup properly using the run-experiment.sh script)
+# this script is also used for resuming an early-terminated tuning
+# syntax: ./run-random.pbs
+
+#PBS -A dc014
+#PBS -l select=1:ncpus=36
+#PBS -l walltime=10:00:00
+#PBS -l place=scatter:excl
+
+
+runEnv="<runEnv>"
+baseDir="<baseDir>"
+workingDir="<workingDir>"
+
+cd $workingDir
+
+export PATH=$baseDir/tools/irace/bin/:$PATH # irace
+export R_LIBS=$baseDir/tools/:$R_LIBS # irace
+export PATH=~/minion-private/bin:$PATH # use minion private repository (master branch)
+export PATH=~/.local/bin/conjure-master/:$PATH # use conjure master branch
+export PATH=~/.local/bin/conjure-master/savilerow/:$PATH # use savilerow in conjure master branch
+
+# run on cluster
+if [[ $runEnv =~ "cluster" ]]; then
+# Load any required modules
+	module load gcc
+	module load R
+fi
+
+runDir="<runDir>"
+maxExperiments=<budget>
+parallel=<parallel>
+
+# generate random configurations and command lines
+./random.R $runDir params.irace $maxExperiments target-runner
+
+# run them
+cd $runDir
+python $baseDir/scripts/tools/run-multiple-cmds.py cmds.txt $parallel
